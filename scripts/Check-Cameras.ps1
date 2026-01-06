@@ -221,9 +221,9 @@ foreach ($camera in $cameras) {
     
     if ($testResult.OverallStatus -eq "ONLINE") {
         $onlineCount++
-        Write-Host " ✓ ONLINE ($($testResult.ResponseTime)ms)" -ForegroundColor Green
+        Write-Host " [OK] ONLINE ($($testResult.ResponseTime)ms)" -ForegroundColor Green
     } else {
-        Write-Host " ✗ OFFLINE" -ForegroundColor Red
+        Write-Host " [FAIL] OFFLINE" -ForegroundColor Red
     }
 }
 
