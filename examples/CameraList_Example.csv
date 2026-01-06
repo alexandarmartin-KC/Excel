@@ -1,0 +1,6 @@
+ID;CameraName;IpAddress;Location;Notes
+1;Hovedindgang;192.168.1.101;Hovedindgang 1. sal;Dome kamera
+2;Parkering A;192.168.1.102;P-kælder Nord;PTZ kamera
+3;Reception;192.168.1.103;Reception;4K kamera
+4;Lager;192.168.1.104;Baglager;Infrarød kamera
+5;Kantinen;192.168.1.105;Kantinen 2. sal;Wide-angle

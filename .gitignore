@@ -1,0 +1,36 @@
+# Windows-specifikke filer
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Excel temp filer
+~$*.xlsx
+~$*.xlsm
+*.tmp
+
+# Excel backup filer
+*.xlk
+
+# Output filer (genereres automatisk)
+/output/*.csv
+/output/*.txt
+/output/*.log
+
+# VIGTIG: Excel dashboard skal oprettes manuelt
+# Se /excel/BUILD_STEPS.md for instruktioner
+/excel/CameraDashboard.xlsx
+
+# Log filer
+*.log
+
+# PowerShell debug filer
+*.ps1.debug
+
+# IDE filer
+.vscode/
+.vs/
+*.suo
+*.user
+
+# Test filer
+/tests/temp/
