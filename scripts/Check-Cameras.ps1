@@ -53,10 +53,15 @@ function Test-CameraConnection {
     
     # Test 1: ICMP Ping
     try {
-        $ping = Test-Connection -ComputerName $IpAddress -Count 1 -TimeoutSeconds ($TimeoutMs / 1000) -ErrorAction SilentlyContinue
+        # PowerShell 5.1 kompatibel syntaks (bruger millisekunder)
+        $ping = Test-Connection -ComputerName $IpAddress -Count 1 -Quiet -ErrorAction SilentlyContinue
         if ($ping) {
             $result.PingStatus = "OK"
-            $result.ResponseTime = $ping.ResponseTime
+            # Få response time med fuld ping
+            $pingFull = Test-Connection -ComputerName $IpAddress -Count 1 -ErrorAction SilentlyContinue
+            if ($pingFull) {
+                $result.ResponseTime = $pingFull.ResponseTime
+            }
         }
     } catch {
         Write-Log "Ping fejlede for $IpAddress : $_" -Level "WARNING"
